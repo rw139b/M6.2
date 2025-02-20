@@ -16,6 +16,20 @@ article {
   height: 297mm;
   margin: 20px auto;
   position: relative;
+  background-color: white;
+  border-top: 1mm solid #6d0606;
+  border-bottom: 1mm solid #6d0606;
+  background: url(top.png) top no-repeat white;
+  background: 
+      url(top.png) top no-repeat,
+      url(bottom.png) bottom no-repeat,
+      linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0) 20%,
+          rgba(0, 0, 0, 0) 80%,
+          rgba(0, 0, 0, 0.2) 100%),
+      white;
+  padding-top: 150px; 
 }
 
 address {
@@ -30,12 +44,38 @@ h1 {
   left: 20mm;
   width: 128px;
   height: 128px;
-  font-size: 20px;
-  letter-spacing: 1px;
-  text-align: center;
-  padding: 44px 0;
-  color: white;
-  text-shadow: 1px 1px 1px black;
+  background-image: url(logo.png);
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Your CSS below here */
+h1::after {
+  content: "Company Name";
+  position: absolute;
+  font-size: 0.8em;
+  color: white;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.content {
+  margin: 30mm 20mm 25mm;
+  column-count: 2;
+  column-gap: 30px;
+  line-height: 1.5;
+}
+
+.form-section {
+  position: absolute;
+  bottom: 30mm;
+  left: 20mm;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 15px;
+}
